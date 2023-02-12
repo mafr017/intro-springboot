@@ -1,0 +1,12 @@
+### Get Messages By ID
+GET localhost:8080/api/v1/item?name=adit
+
+### Post Message
+POST localhost:8080/api/v1/item
+Content-Type: application/json
+
+{
+    "name": "adit",
+    "item": "book",
+    "typeItem": "Borrow"
+}

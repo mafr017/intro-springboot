@@ -10,4 +10,8 @@ public interface MessageService {
     MessageEntity create(MessageEntity messageEntity);
 
     void delete(Long id);
+
+    MessageEntity update(MessageEntity messageEntity);
+
+    MessageEntity getByID(Long id);
 }

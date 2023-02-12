@@ -18,14 +18,24 @@ public class MessageController {
         return messageService.getAll();
     }
 
+    @GetMapping("/{id}")
+    public MessageEntity getByID(@PathVariable Long id) {
+        return messageService.getByID(id);
+    }
+
     @PostMapping
     public MessageEntity create(@RequestBody MessageEntity messageEntity) {
         return messageService.create(messageEntity);
     }
 
     @DeleteMapping
-    public String delete(@RequestBody MessageEntity messageEntity) {
-        messageService.delete(messageEntity.getId());
-        return "Success delete message id" + messageEntity.getId();
+    public String delete(@RequestParam Long id) {
+        messageService.delete(id);
+        return "Success delete message id " + id;
+    }
+
+    @PutMapping
+    public MessageEntity update(@RequestBody MessageEntity messageEntity) {
+        return messageService.update(messageEntity);
     }
 }
